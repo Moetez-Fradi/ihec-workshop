@@ -14,7 +14,8 @@ Open http://localhost:3000. The presenter key in development is `dev`.
 1. Push this folder to a new GitHub repository and import it in Vercel.
 2. Add a Redis database from the Vercel Marketplace (Upstash) and connect it to the project.
    This provides `KV_REST_API_URL` and `KV_REST_API_TOKEN`
-   (`UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` also work).
+   (`UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` also work,
+   as do both `KV_REST_API_*` names with a `STORAGE_` prefix).
 3. Add an environment variable `HOST_KEY` with a long presenter password.
    Without it, presenter controls are disabled in production.
 4. Redeploy, open `/host` and check that the "No shared database" warning is gone.

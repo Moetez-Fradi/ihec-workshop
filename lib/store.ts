@@ -1,8 +1,9 @@
 /** Server only. Uses Upstash Redis over REST when configured, memory otherwise. */
 import type { LiveState } from "./polls";
 
-const url = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
-const token = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
+// STORAGE_ is the custom prefix chosen when the database was connected on Vercel.
+const url = process.env.STORAGE_KV_REST_API_URL ?? process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
+const token = process.env.STORAGE_KV_REST_API_TOKEN ?? process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
 
 /** True when a shared Redis database is configured. */
 export const persistent = Boolean(url && token);
