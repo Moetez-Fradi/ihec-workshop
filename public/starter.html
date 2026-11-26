@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My prototype</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 480px; margin: 40px auto; padding: 0 20px; }
+  button { padding: 10px 16px; cursor: pointer; }
+</style>
+</head>
+<body>
+  <h1>My prototype</h1>
+  <p>If you can read this and the button counts, your setup works.</p>
+  <button id="go">Click me</button>
+  <p id="out" aria-live="polite"></p>
+  <script>
+    var clicks = 0;
+    document.getElementById("go").addEventListener("click", function () {
+      clicks += 1;
+      document.getElementById("out").textContent = "Clicks: " + clicks;
+    });
+  </script>
+</body>
+</html>
